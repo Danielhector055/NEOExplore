@@ -1,50 +1,91 @@
-# Welcome to your Expo app 👋
+# Near-Earth Objects (NEO) Explorer
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Overview
+NEO Explorer is a React Native application that provides information about near-Earth objects (NEOs) using NASA's API. It helps users track potentially hazardous asteroids and view their speed, diameter, and miss distance.
 
-## Get started
+## Features
+- Fetches real-time data on near-Earth objects from NASA API.
+- Displays key attributes such as diameter, velocity, and miss distance.
+- Identifies potentially hazardous objects.
+- Implements best practices for API calls and UI rendering.
 
-1. Install dependencies
+## Installation
+### Prerequisites
+- Node.js (>= 16.x recommended)
+- npm or yarn
+- Expo CLI
 
-   ```bash
-   npm install
-   ```
+### Steps
+```sh
+# Clone the repository
+git clone https://github.com/Danielhector055/NEOExplore
+cd NEOExplore
 
-2. Start the app
+# Install dependencies
+npm install  # or yarn install
 
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+# Start the Expo development server
+npm start  # or expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Environment Variables
+To configure your NASA API key, create a `.env` file in the root of your project:
+```env
+NASA_API_KEY=your_api_key_here
+```
 
-## Learn more
+## Running Tests
+This project uses **@testing-library/react-native** for testing.
+```sh
+npm test
+```
+To fix `act()` warnings, ensure that tests use `waitFor` where necessary.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Folder Structure
+```
+├── app/
+│   ├── index.tsx      # Entry point of the app
+│  
+├── components/
+│   ├── NEOCard.tsx    # Component displaying asteroid details
+├── services/
+│   ├── NEONasa.ts  # API service for fetching NEO data
+├── __test__/              # Dedicated folder for integration/additional tests
+├── .env               # Environment variables
+├── README.md          # Documentation
+└── package.json       # Project dependencies and scripts
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## AI Disclosure
+### 1. AI Usage
+AI tools were used during this project, including OpenAI's ChatGPT, for:
+- Code structure suggestions.
+- Fixing TypeScript errors.
+- Optimizing testing strategies.
 
-## Join the community
+### 2. Manual Work
+The following parts were completed manually:
+- Writing business logic for API calls.
+- Ensuring best practices in state management and React Native UI rendering.
+- Debugging and refining test cases.
 
-Join our community of developers creating universal apps.
+### 3. Evaluating AI Suggestions
+Some AI-generated code contained inefficiencies, such as:
+- Improper API request handling.
+- Overuse of `useEffect` hooks.
+- Inefficient state updates.
+These were manually reviewed and corrected.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 4. Modifications
+AI-generated code was refined by:
+- Improving error handling.
+- Enhancing test coverage.
+- Replacing deprecated methods with recommended alternatives.
+
+### 5. AI in Your Workflow
+AI is a productivity enhancer but requires validation. This project illustrates an approach where AI suggestions were reviewed, refined, and tested to ensure optimal performance.
+
+## License
+This project is open-source.
+
+
