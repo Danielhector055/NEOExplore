@@ -4,7 +4,7 @@ import { NEO } from "../types/NEO";
 const API_KEY = process.env.NASA_API_KEY || "DEMO_KEY";
 const API_URL = "https://api.nasa.gov/neo/rest/v1/feed";
 
-export const NEONasa = {
+const NEONasa = {
   fetchNEOs: async (date: string): Promise<NEO[]> => {
     try {
       const response = await axios.get(API_URL, {
@@ -21,3 +21,5 @@ export const NEONasa = {
     }
   },
 };
+
+export default NEONasa;

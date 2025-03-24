@@ -11,7 +11,7 @@ import {
   Alert,
 } from "react-native";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { NEONasa } from "../services/NEONasa";
+import NEONasa from "../services/NEONasa";
 import NEOCard from "../components/NEOCard";
 import { NEO } from "../types/NEO";
 
@@ -68,7 +68,7 @@ export default function HomeScreen() {
       ) : (
         <FlatList
           data={neos}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.name}
           renderItem={({ item }) => (
             <NEOCard
               name={item.name}

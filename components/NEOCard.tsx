@@ -13,11 +13,11 @@ const NEOCard: React.FC<NEOProps> = ({ name, diameter, velocity, missDistance, i
   return (
     <View style={styles.card}>
       <Text style={styles.name}>{name}</Text>
-      <Text>Diameter: {diameter.toFixed(2)} ft</Text>
+      <Text>Max Estimated Diameter: {diameter.toFixed(2)} ft</Text>
       <Text>Velocity: {velocity.toFixed(2)} mph</Text>
       <Text>Miss Distance: {missDistance.toFixed(2)} miles</Text>
       <Text style={isHazardous ? styles.hazardous : styles.safe}>
-        {isHazardous ? "⚠️ Potentially Hazardous" : "✅ Not Hazardous"}
+        {isHazardous ? "⚠️ Potentially Hazardous!" : "✅ Not Hazardous"}
       </Text>
     </View>
   );
